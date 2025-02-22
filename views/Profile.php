@@ -72,50 +72,27 @@ $username = $_SESSION['username'];
         </div>
     </nav>
 
-    <main class="ml-64 p-6 mt-16">
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="book" class="text-blue-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Total Buku</h3>
-                    <p class="text-3xl font-bold text-blue-500">0</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="bookmark" class="text-red-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Dipinjam</h3>
-                    <p class="text-3xl font-bold text-red-500">0</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="check-circle" class="text-green-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Tersedia</h3>
-                    <p class="text-3xl font-bold text-green-500">0</p>
-                </div>
-            </div>
+    <main class="ml-72 p-10 flex flex-col items-center min-h-screen mt-16">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Profile Pengguna</h2>
+
+    <section class="w-full max-w-4xl bg-white shadow-lg rounded-xl p-6 flex items-center">
+        <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-300">
+            <img src="  " alt="" class="w-full h-full object-cover">
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-800 mt-16 mb-4 text-center">Rekomendasi Buku</h2>
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 1</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 2</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 3</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
+        <div class="ml-8 flex-1">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-2"><?php echo htmlspecialchars($username); ?></h3>
+            <p class="text-gray-600"><strong>Email:</strong> user@example.com</p>
+            <p class="text-gray-600"><strong>No. Telepon:</strong> 0812-3456-7890</p>
+            <p class="text-gray-600"><strong>Status:</strong> Siswa</p>
+            
+            <button class="mt-4 px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition">
+                Edit Profil
+            </button>
         </div>
-    </main>
+    </section>
+</main>
+
 
     <script>
         feather.replace();

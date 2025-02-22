@@ -18,7 +18,7 @@ $username = $_SESSION['username'];
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <title>E-Library SMK Merdeka Bandung</title>
 </head>
-<body>  
+<body>
     <aside id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-gray-800 shadow-lg z-50 p-6 transition-transform transform -translate-x-full md:translate-x-0">
         <h1 class="text-white text-2xl font-extrabold mb-1">E-Library</h1>
         <h3 class="text-white text-lg font-bold mb-4">SMK Merdeka Bandung</h3>
@@ -72,47 +72,44 @@ $username = $_SESSION['username'];
         </div>
     </nav>
 
-    <main class="ml-64 p-6 mt-16">
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="book" class="text-blue-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Total Buku</h3>
-                    <p class="text-3xl font-bold text-blue-500">0</p>
-                </div>
+    <main class="ml-72 p-10">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">List Buku</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="bg-white shadow-xl rounded-xl p-8 flex flex-col items-center hover:shadow-2xl transition">
+                <img src="https://via.placeholder.com/180" alt="Book Cover" class="mb-6 w-36 h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">Judul Buku</h3>
+                <p class="text-md text-gray-500">Penulis Buku</p>
+                <button class="mt-5 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Pinjam</button>
             </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="bookmark" class="text-red-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Dipinjam</h3>
-                    <p class="text-3xl font-bold text-red-500">0</p>
-                </div>
+            <div class="bg-white shadow-xl rounded-xl p-8 flex flex-col items-center hover:shadow-2xl transition">
+                <img src="https://via.placeholder.com/180" alt="Book Cover" class="mb-6 w-36 h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">Judul Buku</h3>
+                <p class="text-md text-gray-500">Penulis Buku</p>
+                <button class="mt-5 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Pinjam</button>
             </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="check-circle" class="text-green-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Tersedia</h3>
-                    <p class="text-3xl font-bold text-green-500">0</p>
-                </div>
+            <div class="bg-white shadow-xl rounded-xl p-8 flex flex-col items-center hover:shadow-2xl transition">
+                <img src="https://via.placeholder.com/180" alt="Book Cover" class="mb-6 w-36 h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">Judul Buku</h3>
+                <p class="text-md text-gray-500">Penulis Buku</p>
+                <button class="mt-5 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Pinjam</button>
             </div>
-        </div>
-
-        <h2 class="text-3xl font-bold text-gray-800 mt-16 mb-4 text-center">Rekomendasi Buku</h2>
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 1</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
+            <div class="bg-white shadow-xl rounded-xl p-8 flex flex-col items-center hover:shadow-2xl transition">
+                <img src="https://via.placeholder.com/180" alt="Book Cover" class="mb-6 w-36 h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">Judul Buku</h3>
+                <p class="text-md text-gray-500">Penulis Buku</p>
+                <button class="mt-5 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Pinjam</button>
             </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 2</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
+            <div class="bg-white shadow-xl rounded-xl p-8 flex flex-col items-center hover:shadow-2xl transition">
+                <img src="https://via.placeholder.com/180" alt="Book Cover" class="mb-6 w-36 h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">Judul Buku</h3>
+                <p class="text-md text-gray-500">Penulis Buku</p>
+                <button class="mt-5 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Pinjam</button>
             </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 3</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
+            <div class="bg-white shadow-xl rounded-xl p-8 flex flex-col items-center hover:shadow-2xl transition">
+                <img src="https://via.placeholder.com/180" alt="Book Cover" class="mb-6 w-36 h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-700">Judul Buku</h3>
+                <p class="text-md text-gray-500">Penulis Buku</p>
+                <button class="mt-5 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Pinjam</button>
             </div>
         </div>
     </main>

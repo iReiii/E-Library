@@ -72,49 +72,52 @@ $username = $_SESSION['username'];
         </div>
     </nav>
 
-    <main class="ml-64 p-6 mt-16">
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="book" class="text-blue-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Total Buku</h3>
-                    <p class="text-3xl font-bold text-blue-500">0</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="bookmark" class="text-red-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Dipinjam</h3>
-                    <p class="text-3xl font-bold text-red-500">0</p>
-                </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="check-circle" class="text-green-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Tersedia</h3>
-                    <p class="text-3xl font-bold text-green-500">0</p>
-                </div>
-            </div>
-        </div>
+    <main class="ml-72 p-10 mt-16 flex flex-col items-center min-h-screen">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">History Peminjaman</h2>
 
-        <h2 class="text-3xl font-bold text-gray-800 mt-16 mb-4 text-center">Rekomendasi Buku</h2>
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 1</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 2</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 3</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-        </div>
+        <section class="w-full max-w-4xl bg-white shadow-lg rounded-xl p-6 mb-10">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4">Peminjaman Sedang Berlangsung</h3>
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-300 px-4 py-2">Judul Buku</th>
+                        <th class="border border-gray-300 px-4 py-2">Tanggal Peminjaman</th>
+                        <th class="border border-gray-300 px-4 py-2">Tanggal Pengembalian</th>
+                        <th class="border border-gray-300 px-4 py-2">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="w-full max-w-4xl bg-white shadow-lg rounded-xl p-6">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4">Riwayat Peminjaman</h3>
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-300 px-4 py-2">Judul Buku</th>
+                        <th class="border border-gray-300 px-4 py-2">Tanggal Peminjaman</th>
+                        <th class="border border-gray-300 px-4 py-2">Tanggal Pengembalian</th>
+                        <th class="border border-gray-300 px-4 py-2">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                        <td class="border border-gray-300 px-4 py-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <script>

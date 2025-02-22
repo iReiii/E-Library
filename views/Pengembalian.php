@@ -6,6 +6,17 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 $username = $_SESSION['username'];
+
+$query = "SELECT nama_lengkap FROM users WHERE username = '$username'";
+$result = mysqli_query($conn, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $nama_lengkap = $row['nama_lengkap'];
+} else {
+    $nama_lengkap = "";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -72,48 +83,32 @@ $username = $_SESSION['username'];
         </div>
     </nav>
 
-    <main class="ml-64 p-6 mt-16">
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="book" class="text-blue-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Total Buku</h3>
-                    <p class="text-3xl font-bold text-blue-500">0</p>
+    <main class="ml-72 p-10 flex justify-center items-center min-h-screen">
+        <div class="w-full max-w-lg bg-white shadow-xl rounded-xl p-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Pengembalian Buku</h2>
+            <form action="proses_pengembalian.php" method="POST">
+                <div class="mb-4">
+                    <label for="nama" class="block text-gray-700 font-semibold mb-2">Nama Peminjam</label>
+                    <input type="text" id="nama" name="nama" value="<?php echo htmlspecialchars($nama_lengkap); ?>" readonly class="w-full px-4 py-2 border rounded-lg bg-gray-200 focus:outline-none">
                 </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="bookmark" class="text-red-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Dipinjam</h3>
-                    <p class="text-3xl font-bold text-red-500">0</p>
+                <div class="mb-4">
+                    <label for="judul_buku" class="block text-gray-700 font-semibold mb-2">Judul Buku</label>
+                    <input type="text" id="judul_buku" name="judul_buku" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-6 flex items-center space-x-4 hover:shadow-xl transition">
-                <i data-feather="check-circle" class="text-green-500 text-4xl"></i>
-                <div>
-                    <h3 class="text-lg font-semibold text-gray-700">Buku Tersedia</h3>
-                    <p class="text-3xl font-bold text-green-500">0</p>
+                <div class="mb-4">
+                    <label for="tanggal_kembali" class="block text-gray-700 font-semibold mb-2">Tanggal Pengembalian</label>
+                    <input type="date" id="tanggal_kembali" name="tanggal_kembali" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
                 </div>
-            </div>
-        </div>
-
-        <h2 class="text-3xl font-bold text-gray-800 mt-16 mb-4 text-center">Rekomendasi Buku</h2>
-        <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 1</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 2</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg p-4 hover:shadow-xl transition">
-                <img src="https://via.placeholder.com/150" alt="Buku" class="w-full h-40 object-cover rounded-md">
-                <h3 class="text-lg font-semibold text-gray-700 mt-2">Judul Buku 3</h3>
-                <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">Pinjam</button>
-            </div>
+                <div class="mb-6">
+                    <label for="kondisi_buku" class="block text-gray-700 font-semibold mb-2">Kondisi Buku</label>
+                    <select id="kondisi_buku" name="kondisi_buku" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="Baik">Baik</option>
+                        <option value="Rusak">Rusak</option>
+                        <option value="Hilang">Hilang</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition">Ajukan Pengembalian</button>
+            </form>
         </div>
     </main>
 

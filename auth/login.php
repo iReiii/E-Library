@@ -1,7 +1,7 @@
 <?php
-session_start();
+include('../include/db.php');
 
-include('../db.php');
+session_start();
 
 $error_message = "";
 
@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        
         if (password_verify($password, $row['password'])) {
+            $_SESSION['username'] = $username;
             header('Location: ../views/Dashboard.php');
             exit;
         } else {
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://unpkg.com/feather-icons"></script>
     <title>Login E-Library SMK Merdeka Bandung</title>
 </head>
-<body class="flex items-center justify-center h-screen bg-[url('../img/bg.jpg')] bg-cover bg-center bg-amber-100">
+<body class="flex items-center justify-center h-screen bg-[url('../img/bg.jpg')] bg-cover bg-center bg-gray-800">
     <div class="bg-white p-6 rounded-xl shadow-lg w-11/12 sm:w-96 lg:w-2/5">
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-lg text-center">
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div>
                     <label for="password" class="sr-only">Password</label>
                     <div class="relative">
-                        <input type="password" id="password" name="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Enter password" required />
+                        <input type="password" id="password" name="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Enter Password" required />
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer" onclick="togglePassword()">
                             <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="size-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

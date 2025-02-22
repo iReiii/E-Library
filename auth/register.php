@@ -1,14 +1,17 @@
 <?php
-include('../db.php');
+
+include('../include/db.php');
 
 $error_message = "";
 $success_message = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
     $username = $_POST['username'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    $sql = "INSERT INTO users (Nama_Lengkap, email, username, password) VALUES ('$fullname', '$email', '$username', '$password')";
     if ($conn->query($sql) === TRUE) {
         $success_message = "Account created successfully!";
     } else {
@@ -25,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Register E-Library SMK Merdeka Bandung</title>
 </head>
-<body class="flex items-center justify-center h-screen bg-[url('../img/bg.jpg')] bg-cover bg-center bg-amber-100">
+<body class="flex items-center justify-center h-screen bg-[url('../img/bg.jpg')] bg-cover bg-center bg-gray-800">
     <div class="bg-white p-6 rounded-xl shadow-lg w-11/12 sm:w-96 lg:w-2/5">
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-lg text-center">
@@ -34,19 +37,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     Welcome To Register E-Library SMK Merdeka Bandung
                 </p>
             </div>
-            <img src="https://cms.smkmerdekabdg.sch.id/assets/images/login_anim.gif" style="z-index:-100; margin:auto; display:block; width:200px;">
 
             <?php if (!empty($success_message)): ?>
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-7" role="alert">
                     <span class="block sm:inline"><?php echo $success_message; ?></span>
                 </div>
             <?php endif; ?>
 
-            <form action="" method="POST" class="mx-auto mb-0 mt-8 max-w-md space-y-4">
+            <form action="" method="POST" class="mx-auto mb-0 mt-10 max-w-md space-y-4">
+                <div>
+                    <label for="fullname" class="sr-only">Nama Lengkap</label>
+                    <div class="relative">
+                        <input type="text" name="fullname" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Nama Lengkap" required />
+                        <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="sr-only">Email</label>
+                    <div class="relative">
+                        <input type="email" name="email" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Email" required />
+                        <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+                        </span>
+                    </div>
+                </div>
                 <div>
                     <label for="username" class="sr-only">Username</label>
                     <div class="relative">
-                        <input type="text" name="username" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Enter Username" required />
+                        <input type="text" name="username" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Username" required />
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
                         </span>
                     </div>
@@ -55,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div>
                     <label for="password" class="sr-only">Password</label>
                     <div class="relative">
-                        <input type="password" id="password" name="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Enter password" required />
+                        <input type="password" id="password" name="password" class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-lg" placeholder="Password" required />
                         <span class="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer" onclick="togglePassword()">
                             <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="size-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
