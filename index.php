@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-Library SMK Merdeka Bandung</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="src/output.css" rel="stylesheet">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="bg-gray-50">
@@ -57,12 +57,6 @@
       <a href="auth/register.php" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-gray-200 transition">Daftar Sekarang</a>
     </div>
   </section>
-
-  <footer class="bg-black text-white py-8">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 E-Library SMK Merdeka Bandung. All rights reserved.</p>
-    </div>
-  </footer>
 
   <script>
     feather.replace();
